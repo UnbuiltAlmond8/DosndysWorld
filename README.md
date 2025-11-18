@@ -37,7 +37,7 @@ Example:
 
 The global.json file must respect the below schema:
 
-```json
+```json5
 {
     "coins": {
         // Base number of coins until the elevator is activated.
@@ -94,3 +94,4 @@ For the best experience, ANSI color support is highly recommended. If your termi
 ## Debug mode (advanced)
 
 To activate debug mode, type in `debug` at the start and press Enter. With debug mode, you can choose a map to test, your position coordinates and the terminal size will show up, and you will not be accused of cheating when you go outside of the map if even possible.
+
