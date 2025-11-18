@@ -1,0 +1,24 @@
+{
+    "coins": {
+        "coins_until_end": 15,
+        "MINIMUM_LEVEL_FOR_COIN_REQ_INCREASE": 3,
+        "INCREASE_ONLY_WHEN_LEVEL_MODULO_IS_ZERO": 5,
+        "AMOUNT_TO_INCREASE_BY": 5
+    },
+    "skillcheck": {
+        "SKILL_CHECK_MARKER_SIZE": 10,
+        "SKILL_CHECK_SIZE": 30,
+        "SKILL_CHECK_CENTER_RANGE": 1,
+        "SKILL_CHECK_SPEED": 20
+    },
+    "moveset": {
+        "UP": "w",
+        "LEFT": "a",
+        "DOWN": "s",
+        "RIGHT": "d",
+        "SKILLCHECK": "space"
+    },
+    "onmapload": {
+        "USE_RANDOM_SPAWN_POINT": true
+    }
+}
