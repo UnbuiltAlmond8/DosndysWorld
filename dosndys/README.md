@@ -92,4 +92,5 @@ Some parts of the script are directory dependent, so you have to run `python gam
 For the best experience, ANSI color support is highly recommended. If your terminal does not support this feature, either 1) remove the ANSI-based `to_print` replacements in the code and change the skill check characters to simple ASCII or 2) use a different terminal with such support enabled.
 
 ## Debug mode (advanced)
+
 To activate debug mode, type in `debug` at the start and press Enter. With debug mode, you can choose a map to test, your position coordinates and the terminal size will show up, and you will not be accused of cheating when you go outside of the map if even possible.
