@@ -83,7 +83,7 @@ The global.json file must respect the below schema:
 ```
 
 Note that the values in `moveset` have to be of valid keyboard key names that the Python `keyboard` module can use.
-For the values in `skillcheck`, they are measured in characters with the excepption of `speed` which is measured as the denominator of a fraction of a second.
+For the values in `skillcheck`, they are measured in characters with the exception of `speed` which is measured as the denominator of a fraction of a second.
 
 The `global.json` file must exist in the root and conform to valid JSON schema, otherwise you will get the error `global.json either does not exist or does not conform to valid JSON`. If this passes, but it does not conform to the schema described above, you will get the error `global.json does not conform to settings schema`.
 
@@ -91,7 +91,7 @@ The `global.json` file must exist in the root and conform to valid JSON schema, 
 
 Some parts of the script are directory dependent, so you have to run `python game.py` from `./dosndys`.
 
-For the best experience, ANSI color support is highly recommended. If your terminal does not support this feature, either 1) remove the ANSI-based `to_print` replacements in the code and change the skill check characters to simple ASCII or 2) use a different terminal with such support enabled.
+For the best experience, ANSI color support is highly recommended. If your terminal does not support this feature, either 1) remove the ANSI-based `to_print` replacements in the unminified code and change the skill check characters to simple ASCII or 2) use a different terminal with such support enabled.
 
 ## Debug mode (advanced)
 
@@ -100,4 +100,5 @@ To activate debug mode, type in `debug` at the start and press Enter. With debug
 ## Minified version
 
 A minified version is available for the same experience with reduced file size, available at this repository's root in the `dosndys-min.7z` file. The author used python-minifier and Notepad++ JSON compression tools alongside 7zip to make this minification possible.
+
 
