@@ -1,10 +1,11 @@
 # Documentation
 
 Dosndy's World was inspired by Dandy's World and the terminal-only nature of DOS games. If some code is unclear, it's because the author's goal was merely to get the game working.
+Directories are shown relative to the root of this repository.
 
 ## Maps
 
-Map files are located in `./maps` with the name `mapN.txt` where `N` is an integer. 
+Map files are located in `./dosndys/maps` with the name `mapN.txt` where `N` is an integer. 
 - IMPORTANT: Map files are 1-indexed! Do not attempt to create a `map0.txt` file, as it will never be used.
 At the start or upon load, a random map file is chosen.
 If an INVALID map is encountered, the game will crash.
@@ -85,7 +86,7 @@ The global.json file must respect the below schema:
 Note that the values in `moveset` have to be of valid keyboard key names that the Python `keyboard` module can use.
 For the values in `skillcheck`, they are measured in characters with the exception of `speed` which is measured as the denominator of a fraction of a second.
 
-The `global.json` file must exist in the root and conform to valid JSON schema, otherwise you will get the error `global.json either does not exist or does not conform to valid JSON`. If this passes, but it does not conform to the schema described above, you will get the error `global.json does not conform to settings schema`.
+The `global.json` file must exist in `./dosndys` and conform to valid JSON schema, otherwise you will get the error `global.json either does not exist or does not conform to valid JSON`. If this passes, but it does not conform to the schema described above, you will get the error `global.json does not conform to settings schema`.
 
 ## Notes about the game
 
@@ -99,6 +100,4 @@ To activate debug mode, type in `debug` at the start and press Enter. With debug
 
 ## Minified version
 
-A minified version is available for the same experience with reduced file size, available at this repository's root in the `dosndys-min.7z` file. The author used python-minifier and Notepad++ JSON compression tools alongside 7zip to make this minification possible.
-
-
+A minified version is available for the same experience with reduced file size, available in the `./dosndys-min.7z` file. The author used python-minifier and Notepad++ JSON compression tools alongside 7zip to make this minification possible.
