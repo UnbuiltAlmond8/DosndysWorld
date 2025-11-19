@@ -10,7 +10,7 @@ At the start or upon load, a random map file is chosen.
 If an INVALID map is encountered, the game will crash.
 
 A valid map must:
-- (file name only) match the regex pattern "map\d+\.txt" in the file name
+- (file name only) match the regex pattern `map\d+\.txt` in the file name
 - consist only of the characters #, O, E, U, spaces, and newlines
 - comtain at least one of the aforementioned characters, except:
   - O, which must appear exactly once
@@ -18,6 +18,7 @@ A valid map must:
   - E, which must appear exactly three times, consecutively
 - have all its lines be of equal length
 - have an EEE elevator sequence placed within the horizontal walls at the very top or bottom
+  
 and should:
 - not have holes in the walls that allow going outside of the map
 
@@ -87,7 +88,7 @@ The `global.json` file must exist in the root and conform to valid JSON schema, 
 
 ## Notes about the game
 
-Some parts of the script are directory dependent, so you have to run `python game.py` from the root of the game.
+Some parts of the script are directory dependent, so you have to run `python game.py` from `./dosndys`.
 
 For the best experience, ANSI color support is highly recommended. If your terminal does not support this feature, either 1) remove the ANSI-based `to_print` replacements in the code and change the skill check characters to simple ASCII or 2) use a different terminal with such support enabled.
 
@@ -95,3 +96,6 @@ For the best experience, ANSI color support is highly recommended. If your termi
 
 To activate debug mode, type in `debug` at the start and press Enter. With debug mode, you can choose a map to test, your position coordinates and the terminal size will show up, and you will not be accused of cheating when you go outside of the map if even possible.
 
+## Minified version
+
+A minified version is available for the same experience with reduced file size, available at this repository's root in the `dosndys-min.7z` file. The author used python-minifier and Notepad++ JSON compression tools alongside 7zip to make this minification possible.
