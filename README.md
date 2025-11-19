@@ -43,40 +43,41 @@ The global.json file must respect the below schema:
     "coins": {
         // Base number of coins until the elevator is activated.
         // Default: 15.
-        "COINS_UNTIL_END": int,
+        "COINS_UNTIL_END": number,
 
         // The starting level when the coin amount required is increased.
         // Default: 3.
-        "MINIMUM_LEVEL_FOR_COIN_REQ_INCREASE": int,
+        "MINIMUM_LEVEL_FOR_COIN_REQ_INCREASE": number,
 
         // Apply the increase only when level % value == 0.
         // Default: 5.
-        "INCREASE_ONLY_WHEN_LEVEL_MODULO_IS_ZERO": int,
+        "INCREASE_ONLY_WHEN_LEVEL_MODULO_IS_ZERO": number,
 
         // When an increase occurs, how much do we increase the coin
         // requirement by?
         // Default: 5.
-        "AMOUNT_TO_INCREASE_BY": int
+        "AMOUNT_TO_INCREASE_BY": number
     },
     "skillcheck": {
-        "SKILL_CHECK_MARKER_SIZE": int, // Default: 10
-        "SKILL_CHECK_SIZE": int, // Default: 30
-        "SKILL_CHECK_CENTER_RANGE": int, // Default: 1
-        "SKILL_CHECK_SPEED": int // Default: 20
+        "SKILL_CHECK_MARKER_SIZE": number, // Default: 10
+        "SKILL_CHECK_SIZE": number, // Default: 30
+        "SKILL_CHECK_CENTER_RANGE": number, // Default: 1
+        "SKILL_CHECK_SPEED": number // Default: 20
     },
     "moveset": {
         // Changes to this moveset are reflected in the start
         // screen.
-        "up": str, // Default: "w"
-        "left": str, // Default: "a"
-        "down": str, // Default: "s"
-        "right": str, // Default: "d"
-        "skillcheck": str // Default: "space"
+        "up": string, // Default: "w"
+        "left": string, // Default: "a"
+        "down": string, // Default: "s"
+        "right": string, // Default: "d"
+        "skillcheck": string // Default: "space"
     },
     "onmapload": {
         // If true, moves the U to a random walkable point before
         // loading the map.
-        "USE_RANDOM_SPAWN_POINT": true
+        // Default: true.
+        "USE_RANDOM_SPAWN_POINT": boolean
     }
 }
 ```
@@ -99,3 +100,4 @@ To activate debug mode, type in `debug` at the start and press Enter. With debug
 ## Minified version
 
 A minified version is available for the same experience with reduced file size, available at this repository's root in the `dosndys-min.7z` file. The author used python-minifier and Notepad++ JSON compression tools alongside 7zip to make this minification possible.
+
