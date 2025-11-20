@@ -57,8 +57,8 @@ The global.json file must respect the below schema:
 
         // When an increase occurs, how much do we increase the coin
         // requirement by?
-        // Default: 5.
-        "AMOUNT_TO_INCREASE_BY": number
+        // Default: "1.5 * level".
+        "AMOUNT_TO_INCREASE_BY": number or string
     },
     "skillcheck": {
         "SKILL_CHECK_MARKER_SIZE": number, // Default: 10
@@ -89,6 +89,8 @@ For the values in `skillcheck`, they are measured in characters with the excepti
 
 The `global.json` file must exist in `./dosndys` and conform to valid JSON schema, otherwise you will get the error `global.json either does not exist or does not conform to valid JSON`. If this passes, but it does not conform to the schema described above, you will get the error `global.json does not conform to settings schema`.
 
+For `AMOUNT_TO_INCREASE_BY`, advanced users can also use a string representation of an expression that the `simpleeval` module can parse, allowing for complex increases involving just the `level` variable. For simple linear increases, `AMOUNT_TO_INCREASE_BY` can also simply be an integer.
+
 ## Notes about the game
 
 Some parts of the script are directory dependent, so you have to run `python game.py` from `./dosndys`.
@@ -104,3 +106,4 @@ To activate debug mode, type in `debug` at the start and press Enter. With debug
 ## Minified version
 
 A minified version is available for the same experience with reduced file size, available in the `./dosndys-min.7z` file. The author used python-minifier and Notepad++ JSON compression tools alongside 7zip to make this minification possible.
+
