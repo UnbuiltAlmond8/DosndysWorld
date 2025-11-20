@@ -89,7 +89,7 @@ For the values in `skillcheck`, they are measured in characters with the excepti
 
 The `global.json` file must exist in `./dosndys` and conform to valid JSON schema, otherwise you will get the error `global.json either does not exist or does not conform to valid JSON`. If this passes, but it does not conform to the schema described above, you will get the error `global.json does not conform to settings schema`.
 
-For `AMOUNT_TO_INCREASE_BY`, advanced users can also use a string representation of an expression that the `simpleeval` module can parse, allowing for complex increases involving just the `level` variable. For simple linear increases, `AMOUNT_TO_INCREASE_BY` can also simply be an integer.
+For `AMOUNT_TO_INCREASE_BY`, advanced users can also use a string representation of an expression that the `simpleeval` module can parse, allowing for complex increases involving just the `level` variable, noting that the floor of the evaluation is used, but  `AMOUNT_TO_INCREASE_BY` can also simply be an integer for simple linear increases.
 
 ## Notes about the game
 
@@ -106,4 +106,5 @@ To activate debug mode, type in `debug` at the start and press Enter. With debug
 ## Minified version
 
 A minified version is available for the same experience with reduced file size, available in the `./dosndys-min.7z` file. The author used python-minifier and Notepad++ JSON compression tools alongside 7zip to make this minification possible.
+
 
