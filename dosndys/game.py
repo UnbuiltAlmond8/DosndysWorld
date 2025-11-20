@@ -10,6 +10,11 @@ try:
 except ImportError:
     raise ModuleNotFoundError("keyboard module not installed, please run 'pip install keyboard'")
 
+try:
+    from simpleeval import simple_eval
+except ImportError:
+    raise ModuleNotFoundError("simpleeval module not installed, please run 'pip install simpleeval'")
+
 from collections import Counter
 from typing import Any
 
@@ -39,7 +44,7 @@ try:
     coins_until_end: int = coins_conf["coins_until_end"]
     MINIMUM_LEVEL_FOR_COIN_REQ_INCREASE: int = coins_conf["MINIMUM_LEVEL_FOR_COIN_REQ_INCREASE"]
     INCREASE_ONLY_WHEN_LEVEL_MODULO_IS_ZERO: int = coins_conf["INCREASE_ONLY_WHEN_LEVEL_MODULO_IS_ZERO"]
-    AMOUNT_TO_INCREASE_BY: int = coins_conf["AMOUNT_TO_INCREASE_BY"]
+    AMOUNT_TO_INCREASE_BY: str | int = coins_conf["AMOUNT_TO_INCREASE_BY"]
 
     SKILL_CHECK_MARKER_SIZE: int = skillcheck_conf["SKILL_CHECK_MARKER_SIZE"]
     SKILL_CHECK_SIZE: int = skillcheck_conf["SKILL_CHECK_SIZE"]
@@ -53,7 +58,10 @@ except KeyError:
     raise ValueError("global.json does not conform to settings schema")
 
 # Type checking
-assert checkType([int, int, int], coins_until_end, MINIMUM_LEVEL_FOR_COIN_REQ_INCREASE, AMOUNT_TO_INCREASE_BY), \
+if type(AMOUNT_TO_INCREASE_BY) not in [str, int]:
+    raise ValueError("global.json does not conform to settings schema")
+
+assert checkType([int, int], coins_until_end, MINIMUM_LEVEL_FOR_COIN_REQ_INCREASE), \
     "global.json does not conform to settings schema"
 assert checkType([int, int, int, int], SKILL_CHECK_MARKER_SIZE, SKILL_CHECK_SIZE, SKILL_CHECK_CENTER_RANGE, SKILL_CHECK_SPEED), \
     "global.json does not conform to settings schema"
@@ -368,5 +376,12 @@ while 1:
     if response == 1:
         level += 1
         if level >= MINIMUM_LEVEL_FOR_COIN_REQ_INCREASE and level % INCREASE_ONLY_WHEN_LEVEL_MODULO_IS_ZERO == 0:
-            coins_until_end += AMOUNT_TO_INCREASE_BY
+            try:
+                if type(AMOUNT_TO_INCREASE_BY) == int:
+                    coins_until_end += AMOUNT_TO_INCREASE_BY
+                elif type(AMOUNT_TO_INCREASE_BY) == str:
+                    coins_until_end += math.floor(simple_eval(AMOUNT_TO_INCREASE_BY, names={"level": level}))
+            except:
+                clear()
+                raise ValueError("Failed to eval coin increase expression, exiting.")
         changeMap()
