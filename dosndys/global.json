@@ -3,7 +3,7 @@
         "coins_until_end": 15,
         "MINIMUM_LEVEL_FOR_COIN_REQ_INCREASE": 3,
         "INCREASE_ONLY_WHEN_LEVEL_MODULO_IS_ZERO": 5,
-        "AMOUNT_TO_INCREASE_BY": 5
+        "AMOUNT_TO_INCREASE_BY": "1.5 * level"
     },
     "skillcheck": {
         "SKILL_CHECK_MARKER_SIZE": 10,
