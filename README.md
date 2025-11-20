@@ -19,9 +19,9 @@ A valid map must:
   - U, which must appear exactly once, and is the initial position of the player
   - E, which must appear exactly three times, consecutively
 - have all its lines be of equal length
-- have an EEE elevator sequence placed within the horizontal walls at the very top or bottom
   
 and should:
+- have an EEE elevator sequence placed within the horizontal walls at the very top or bottom
 - not have holes in the walls that allow going outside of the map
 
 Example:
@@ -104,4 +104,3 @@ To activate debug mode, type in `debug` at the start and press Enter. With debug
 ## Minified version
 
 A minified version is available for the same experience with reduced file size, available in the `./dosndys-min.7z` file. The author used python-minifier and Notepad++ JSON compression tools alongside 7zip to make this minification possible.
-
