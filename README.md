@@ -1,6 +1,7 @@
 # Documentation
 
 Dosndy's World was inspired by Dandy's World and the terminal-only nature of DOS games. If some code is unclear, it's because the author's goal was merely to get the game working.
+
 Directories are shown relative to the root of this repository.
 
 ## Maps
@@ -94,6 +95,8 @@ Some parts of the script are directory dependent, so you have to run `python gam
 
 For the best experience, ANSI color support is highly recommended. If your terminal does not support this feature, either 1) remove the ANSI-based `to_print` replacements in the unminified code and change the skill check characters to simple ASCII or 2) use a different terminal with such support enabled.
 
+It is highly recommended to use PowerShell with PSReadLine to prevent your keystrokes from being displayed after exiting. This is important because the script intentionally does not pass `suppress=True` as that may cause the keyboard to not work in other applications.
+
 ## Debug mode (advanced)
 
 To activate debug mode, type in `debug` at the start and press Enter. With debug mode, you can choose a map to test, your position coordinates and the terminal size will show up, and you will not be accused of cheating when you go outside of the map if even possible.
@@ -101,3 +104,4 @@ To activate debug mode, type in `debug` at the start and press Enter. With debug
 ## Minified version
 
 A minified version is available for the same experience with reduced file size, available in the `./dosndys-min.7z` file. The author used python-minifier and Notepad++ JSON compression tools alongside 7zip to make this minification possible.
+
